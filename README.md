@@ -3,6 +3,8 @@ NetApp Cookbook
 
 The NetApp cookbook manages Clustered Data ONTAP clusters using the NetApp Manageability SDK. Both cluster-wide and Storage Virtual Machine (SVM, formerly known as Vservers) specific operations are supported.
 
+The NetApp cookbook resources can be used to manage Cloud ONTAP instances in Amazon Web Services.
+
 Requirements
 ------------
 #### NetApp Manageability SDK Library v5.0
@@ -127,6 +129,8 @@ netapp_role
 -----------
 Cluster management of role creation, modification and deletion.
 
+netapp_role resource can be used to manage roles on the Cloud ONTAP instances as well. 
+
 ### Actions ###
 This resource has the following actions:
 
@@ -225,6 +229,8 @@ end
 netapp_volume
 -------------
 SVM-management of volume creation, modification and deletion including auto-increment, snapshot schedules and volume options.
+
+netapp_volume resource provisions additional volume on the Cloud ONTAP instances. It Creates the volume on an existing aggregate that has sufficient free space.
 
 ### Actions ###
 This resource has the following actions:
@@ -379,6 +385,8 @@ netapp_qtree
 ------------
 SVM-management of qtree creation, modification and deletion. Qtrees are a special subdirectory of the root of a volume that acts as a virtual subvolume with special attributes.
 
+netapp_qtree resource can be used to create logically defined file system on Cloud ONTAP instances.
+
 ### Actions ###
 This resource has the following actions:
 
@@ -414,6 +422,7 @@ netapp_role '/bar' do
   action :delete
 end
 ````
+
 
 
 Contributing
