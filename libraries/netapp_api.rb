@@ -76,9 +76,10 @@ module NetApp
     def check_errors!(result, resource, action)
       if result.results_errno == 0  # The Api ran successfully and returned no error.
         return true
-      elsif result.results_errno == "17" || result.results_errno == "9012" || result.results_errno == "14922" || result.results_errno == "13130" || result.results_errno ==  "13080" || result.results_errno == "13001" || result.results_errno ==  "15698" || result.results_errno == "15661" || result.results_errno ==  "13040"
+      elsif [EONTAPI_EEXIST, EVDISK_ERROR_VDISK_EXISTS, EVSERVERNAMEEXISTS, 13130, EQTREEEXISTS, EAPIERROR, EVSERVERNOTFOUND, EOBJECTNOTFOUND, EVOLUMEDOESNOTEXIST, EVOLEXISTS].include? result.results_errno.to_i
         #If the resource already exists, then ignore the error and proceed with the next resource.
         #Do not update resource count.
+        Chef::Log.debug "Ignoring NetApp API error: #{resource} #{action} failed.Error no- #{result.results_errno}. Reason- #{result.results_reason}."
         return false
       else
         raise "#{resource} #{action} failed.Error no- #{result.results_errno}. Reason- #{result.results_reason}."
