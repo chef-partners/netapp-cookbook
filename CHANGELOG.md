@@ -1,7 +1,14 @@
 # Change Log
 
-## [v0.4.0](https://github.com/chef-partners/netapp-cookbook/tree/v0.4.0)
+## [v0.4.1](https://github.com/chef-partners/netapp-cookbook/tree/v0.4.1)
 
+[Full Changelog](https://github.com/chef-partners/netapp-cookbook/compare/v0.4.0...v0.4.1)
+
+**Merged pull requests:**
+
+- New error code and refactor [\#8](https://github.com/chef-partners/netapp-cookbook/pull/8) ([swalberg](https://github.com/swalberg))
+
+## [v0.4.0](https://github.com/chef-partners/netapp-cookbook/tree/v0.4.0) (2018-02-06)
 [Full Changelog](https://github.com/chef-partners/netapp-cookbook/compare/0.3.1...v0.4.0)
 
 **Merged pull requests:**
